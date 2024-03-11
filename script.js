@@ -1,0 +1,26 @@
+let displayValue = '';
+
+function appendNumber(number) {
+    displayValue += number;
+    document.getElementById('display').value = displayValue;
+}
+
+function operate(operator) {
+    displayValue += operator;
+    document.getElementById('display').value = displayValue;
+}
+
+function calculate() {
+    try {
+        displayValue = eval(displayValue);
+        document.getElementById('display').value = displayValue;
+    } catch (error) {
+        alert('Error! Invalid input');
+        clearDisplay();
+    }
+}
+
+function clearDisplay() {
+    displayValue = '';
+    document.getElementById('display').value = displayValue;
+}
